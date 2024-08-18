@@ -1,0 +1,61 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoBlogging Page</title>
+<body>
+    <div>
+        <div class="h1-container">
+            <h1>AutoBlogging Tool</h1>
+        </div>
+        <form id="generate-form" method="POST" class="form">
+            {% csrf_token %}
+            <input type="hidden" id="csrf_token" name="csrftoken" value="{{ csrf_token }}">
+                <label for="area_of_work">Area of Work:</label>
+                {{ form.area_of_work }}
+                <label for="keywords">Keywords:</label>
+                {{ form.keywords }}
+            <button type="submit" >Generate Title</button>
+        </form>
+    </div>
+        <div id="content-container" class="section">
+            <div class="heading">
+                <h2>Generated Title</h2>
+            
+                <button id="generate-content-btn" class="btn btn-secondary">Generate Blog</button>
+            </div>
+                <p id="generated-title"></p>
+        </div>
+
+        <div id="output-blog" class="section">
+
+            <!-- <details>  <summary class="heading">  <h2>Generated Blog</h2>
+                <button id="generate-image-btn" class="btn btn-tertiary">Generate Image</button>
+                <span class="collapse-indicator">&#9660;</span>
+              </summary>
+              <p id="generated-content"></p>  </details> -->
+              <div class="heading">
+                <h2>Generated Blog</h2>
+                <button id="generate-image-btn" class="btn btn-tertiary">Generate Image</button>
+           </div>
+           <p id="generated-content"></p>
+	</div>
+	
+	
+	<div id="output-image" class="section">
+	    <div class="heading">
+		<h2>Generated Image</h2>
+	    </div>
+	    <img id="generated-image" src="" alt="Generated Image">
+	</div>
+            <!-- <button id="copy-content-btn" class="btn btn-secondary">Copy Content</button> -->
+        </div>
+   
+    <script src="{% static 'script.js' %}"></script>
+   </body>
+</html>

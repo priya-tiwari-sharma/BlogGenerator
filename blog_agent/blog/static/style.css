@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f4f4f9;
+    color: #333;
+}
+input, button {
+    padding: 8px;
+    margin: 5px;
+}
+label {
+    margin-right: 10px;
+}
+.section {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.heading h2 {
+    margin: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.h1-container {
+    display: flex;
+    justify-content: center;
+}
+form {
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+.collapse-indicator {
+    margin-left: 1px; /* Adjust spacing as needed */
+    font-size: 1.2rem; /* Adjust font size as needed */
+    transition: transform 0.3s ease; /* Add smooth transition */
+  }
+  
+details[open] .collapse-indicator {
+    transform: rotate(180deg); /* Rotate indicator for open state */
+  }
+  
